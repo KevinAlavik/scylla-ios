@@ -462,7 +462,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.puffer.Scylla;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Scylla.app;
 				PRODUCT_NAME = Scylla;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -500,7 +500,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.puffer.Scylla;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Scylla.app;
 				PRODUCT_NAME = Scylla;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

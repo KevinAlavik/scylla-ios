@@ -23,26 +23,31 @@ struct OtherView: View {
         NavigationView {
             List {
                 //MARK: Credits
-                Section("Credits") {
+                Section("Contributes                                                  Roles") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("pufferisadev (Lead Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/pufferisadev")!)}
+                        Button("PufferIsADev              Lead Developer") {UIApplication.shared.open(URL(string: "https://twitter.com/pufferisadev")!)}
                             .foregroundColor(Color.primary)
                         
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("mrbeef777 (Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
+                        Button("MrBeef777                           Developer") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
                             .foregroundColor(Color.primary)
                     }
                     HStack {
                         Image("iRayanKhan").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("Rayan Khan (Contributor)") {UIApplication.shared.open(URL(string: "https://twitter.com/iRayanKhan")!)}
+                        Button("Rayan Khan                       Contributor") {UIApplication.shared.open(URL(string: "https://twitter.com/iRayanKhan")!)}
                             .foregroundColor(Color.primary)
                     }
                 }
                 //MARK: Testers
-                Section("Testers") {
+                Section("Beta Testers") {
+                    HStack {
+                        
+                        Image("Aleex").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("Aleex")
+                    }
                     HStack {
                         
                         Image("1359").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
@@ -110,14 +115,14 @@ struct OtherView: View {
                         
                     }) {
                         Image(systemName: "shippingbox.fill")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
+                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This Is An Beta!"), message: Text("Some stuff are disabled \n For Example : Repos And Certificates)"), dismissButton: .default(Text("Okie-Dokey")))}.tint(.pink)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showingAlert = true
                     }) {
                         Image(systemName: "signature")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
+                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This Is An Beta!"), message: Text("Some Features are disabled \n For Example : Repos And Certificates"), dismissButton: .default(Text("OK")))}.tint(.pink)
                 }
             }
         }

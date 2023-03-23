@@ -19,14 +19,14 @@ struct ImportCertView: View {
         
         VStack {
             HStack {
-                Button("Select p12 and mobileprovision") {
+                Button(".P12 & .MobileProvision") {
                     openDocumentPicker(fileExtension: "json", allowMultiple: true)
-                }.buttonStyle(.borderedProminent).tint(.pink)
+                }.buttonStyle(.borderedProminent).tint(.blue)
             }
             
             HStack {
-                TextField("Password (leave blank if there is none): ", text: $certPass)
-                    .font(.system(size: 10))
+                TextField("Empty = None    PASSWORD ", text: $certPass)
+                    .font(.system(size: 12))
             }
             .textFieldStyle(.roundedBorder)
             .frame(width: 260)
@@ -34,8 +34,8 @@ struct ImportCertView: View {
             HStack {
                 Button() {
                 } label: {
-                    Text("Add certificate")
-                        .frame(width: 235)
+                    Text("Save")
+                        .frame(width: 37)
                 }
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)

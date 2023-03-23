@@ -13,7 +13,7 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
+                    Image(systemName: "Door")
                         .tint(.pink)
                     Text("Home")
                         .foregroundColor(.pink)
@@ -21,7 +21,7 @@ struct ContentView: View {
             SignView()
                 .tabItem {
                     Image(systemName: "signature")
-                    Text("Sign IPA")
+                    Text("Signing")
                 }
             OtherView()
                 .tabItem {

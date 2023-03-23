@@ -15,27 +15,30 @@ struct PrivateBeta: View {
     @Environment(\.dismiss) var dismiss
     @State private var key: String = ""
     var body: some View {
-        Image(systemName: "exclamationmark.triangle").resizable().frame(width: 75.0, height: 75.0)
+        Image(systemName: "lock.trianglebadge.exclamationmark.fill").resizable().frame(width: 75.0, height: 75.0)
+            .foregroundColor(Color(.systemRed))
             .tint(.yellow)
             .padding()
             .onAppear {
                 getSecretKey()
             }
-        Text("This is a private beta!")
+        Text("This Is A Private Beta!")
             .font(.headline)
-        Text("Please do not share it!")
-            .font(.caption)
+            .bold()
+        Text("The Scylla Team Has Spent Alot of time on this so dont Leak it!")
+            .font(.caption2)
+            .bold()
             .padding()
         VStack {
-            Text("Secret key (Check the #secret-keys channel for the newest key)")
-            TextField("******", text: $key)
-        }.frame(width: 280).textFieldStyle(.roundedBorder)
-        Button("Continue", action: close)
-            .buttonStyle(.borderedProminent).tint(.pink)
+            Text("Beta Key (#secret-keys for the Key)")
+            TextField("Enter Key Here", text: $key)
+        }.frame(width: 300).textFieldStyle(.roundedBorder)
+        Button("Enter", action: close)
+            .buttonStyle(.borderedProminent).tint(.black)
             .padding()
-        Text("(Keep in mind this is an beta feautures might be broken)")
-            .foregroundColor(.gray)
-            .font(.footnote)
+        Text("Keep In Mind This Is An Beta And Feautures Might Be Broken")
+            .foregroundColor(.red)
+            .font(.caption)
         
         
             .interactiveDismissDisabled()
@@ -70,8 +73,8 @@ struct HomeView: View {
           HStack {
             Image(systemName: "square.and.arrow.down")
             NavigationLink(destination: ImportCertView()) {
-              Text("Import Certificate")
-                .foregroundColor(.pink)
+              Text("Certificate")
+                .foregroundColor(.black)
             }.tint(.pink)
           }
           HStack {
@@ -84,7 +87,7 @@ struct HomeView: View {
         }.alert(isPresented: $showNoCertAlert) {
           Alert(
             title: Text("No Cert Imported!"), message: Text("You havent imported any certs!"),
-            primaryButton: .destructive(Text("Dissmiss")),
+            primaryButton: .destructive(Text("Cancel")),
             secondaryButton: .default(Text("Import Certificate")))
         }
       }
@@ -110,10 +113,10 @@ struct HomeView: View {
             Image(systemName: "signature")
           }.alert(isPresented: $showingAlert) {
             Alert(
-              title: Text("This is an beta!"),
-              message: Text("Some stuff are disabled \n(Such as repos, custom certs)"),
-              dismissButton: .default(Text("Got it!")))
-          }.tint(.pink)
+              title: Text("This Is A Beta!"),
+              message: Text("Some Features Are Disabled \n For Example : Repos and Custom Certificate"),
+              dismissButton: .default(Text("OK")))
+          }.tint(.black)
         }
       }
     }.onAppear(perform: {

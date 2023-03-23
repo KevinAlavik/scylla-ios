@@ -20,12 +20,12 @@ struct SelectCertView: View {
         
         VStack {
             HStack {
-                Button("Select certificate") {
+                Button("Select Certificate") {
                     openDocumentPicker(fileExtension: "json", allowMultiple: false)
                 }.buttonStyle(.borderedProminent).tint(.pink)
             }
             Toggle(isOn: $useCertAlways) {
-                Text("Always use this cert")
+                Text("Default Certificate")
             }
         }.position(x: UIScreen.screenWidth/2, y: 0)
     }

@@ -13,30 +13,30 @@ struct SignView: View {
     @State private var customBundleId: String = ""
     var body: some View {
         VStack {
-            Text("Sign IPA")
+            Text("Signing")
                 .font(.system(size: 30))
                 .position(x: UIScreen.screenWidth/2, y:500)
             
             HStack {
-                Button("Select IPA") {
+                Button(".IPA") {
                     openDocumentPicker(fileExtension: "json", allowMultiple: false)
-                }.buttonStyle(.borderedProminent).tint(.pink)
+                }.buttonStyle(.borderedProminent).tint(.blue)
                 HStack {
-                    Button("Select Cert") {
+                    Button("Certificate") {
                         openDocumentPicker(fileExtension: "yml", allowMultiple: false)
-                    }.buttonStyle(.borderedProminent).tint(.pink)
+                    }.buttonStyle(.borderedProminent).tint(.cyan)
                 }
             }
             
             HStack {
-                TextField("Custom App Name: ", text: $customAppName)
+                TextField("App Name                                      Optional ", text: $customAppName)
                     .font(.system(size: 10))
                     .frame(width: 218)
             }
             .textFieldStyle(.roundedBorder)
             .frame(width: 305)
             HStack {
-                TextField("Custom Bundle ID: ", text: $customBundleId)
+                TextField("Bundle ID                                       Optional ", text: $customBundleId)
                     .font(.system(size: 10))
                     .frame(width: 218)
             }
@@ -51,7 +51,7 @@ struct SignView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
-                .tint(.pink)
+                .tint(.green)
             }
         }
         .position(x: UIScreen.screenWidth/2, y: UIScreen.screenHeight/2-350)
@@ -63,14 +63,14 @@ struct SignView: View {
                         
                     }) {
                         Image(systemName: "shippingbox.fill")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
+                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This Is An Beta!"), message: Text("Some Features Are Disabled \n For Example : Repos And Certificates"), dismissButton: .default(Text("OK!")))}.tint(.pink)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showingAlert = true
                     }) {
                         Image(systemName: "signature")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
+                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This Is An Beta!"), message: Text("Some Features Are Disabled \n Example : Repos And Certificates"), dismissButton: .default(Text("OK")))}.tint(.pink)
                 }
             }
     }

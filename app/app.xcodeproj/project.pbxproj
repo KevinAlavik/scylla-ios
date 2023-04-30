@@ -150,7 +150,6 @@
 		0A788E9D29BA3808003CDF42 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				0AAB447029E3243200F09EF9 /* Signing */,
 				04BCC7F729BCBEC0006C969E /* Info.plist */,
 				04BCC7F429BCBD9A006C969E /* Extensions */,
 				04BCC7F329BCBD87006C969E /* Views */,
@@ -160,14 +159,6 @@
 				0A5C3F4029CF45640076F679 /* Localizable.strings */,
 			);
 			path = app;
-			sourceTree = "<group>";
-		};
-		0AAB447029E3243200F09EF9 /* Signing */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Signing;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -47,8 +47,8 @@ struct AppInfo: Decodable {
     let banner: String?
     let bundleID: String?
     let description: String?
-    let contact: [String: String]? // Updated to an array of strings
-    let screenshots: [URL: URL]?
+    let contact: [String: URL]? // Updated to an array of strings
+    let screenshots: [URL]? // Updated to an array of dictionaries
     let changelog: String?
     let appstore: String?
     let debs: [URL: URL]?
@@ -67,6 +67,7 @@ struct AppInfo: Decodable {
     let bundleIdentifier: String?
     let developerName: String?
 }
+
 
 
 

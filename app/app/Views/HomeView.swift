@@ -25,15 +25,15 @@ struct HomeView: View {
     @State private var repoData: [Repo] = []
     @State private var repoUrlAdd: String = ""
     //MARK: IMPORTANT VARS
-    @State private var reposs = ["https://repo.alexspaces.me/", "https://puffer.is-a.dev/scylla-ios/cdn/repo.json", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json"]
+    @State private var reposs = ["https://puffer.is-a.dev/scylla-ios/cdn/repo.json", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json"]
     @State private var repos = ["https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json", "https://repo.alexspaces.me/", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json", "https://raw.githubusercontent.com/vizunchik/AltStoreRus/master/apps.json", "https://bit.ly/Quantumsource-plus", "https://bit.ly/Altstore-complete", "https://bit.ly/Quantumsource", "https://ipa.cypwn.xyz/scarlet.json", "https://altstore.oatmealdome.me", "https://bit.ly/wuxuslibraryplus", "https://flyinghead.github.io/flycast-builds/altstore.json", "https://theodyssey.dev/altstore/odysseysource.json", "https://puffer.is-a.dev/scylla-ios/cdn/repo.json"]
     @State private var installedApps = [["Scylla", "1.0", "https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jpg"]]
+    @State private var scarletRepos = ["https://beefload.ga/index.txt", "https://usescarlet.com/scarlet.json"]
     //END
     @State private var showingPrivBeta = false
     @State private var repoError: String = ""
     @State private var loadingText = "Loading repos..."
     @State private var appsLoaded = false
-    
   var body: some View {
       NavigationView {
           List {
@@ -62,16 +62,16 @@ struct HomeView: View {
                               .resizable()
                               .frame(width: 50, height: 50)
                               .cornerRadius(10)
-                              .padding(.top, 10)
+                              .padding(.top, 7)
                           VStack {
                               Text("Scylla v" + scyllaVersion)
                                   .frame(maxWidth: .infinity, alignment: .leading)
                               Text("com.scylla.app")
                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                  .font(.system(size: 10))
+                                  .font(.system(size: 7))
                                   .foregroundColor(.gray)
-                          }.padding(.top, 10)
-                      }.padding(.bottom, 10)
+                          }.padding(.top, 7)
+                      }.padding(.bottom, 7)
                   }
               }
             Section("Repos") {
@@ -83,7 +83,7 @@ struct HomeView: View {
                                       KFImage(URL(string:repoData.META?.repoIcon ?? repoData.Info?.repoIcon ?? "https://pbs.twimg.com/profile_images/1177457687014985729/3rleupvs_400x400.png"))
                                           .resizable()
                                           .frame(width: 50, height: 50)
-                                          .cornerRadius(10).padding(.top, 10)
+                                          .cornerRadius(10).padding(.top, 7)
                                   }
                                   VStack {
                                       Text(repoData.META?.repoName ?? repoData.Info?.repoName ?? repoData.name ?? "No Name")
@@ -92,37 +92,19 @@ struct HomeView: View {
                                           .frame(maxWidth: .infinity, alignment: .leading)
                                           .font(.system(size: 10))
                                           .foregroundColor(.gray)
-                                  }.padding(.top, 10)
-                              }.padding(.bottom, 10)
+                                  }.padding(.top, 7)
+                              }.padding(.bottom, 7)
                           }
                       } else {
                           Text(loadingText)
                       }
                   }
-                VStack {
-                    TextField("Repo url: ", text: $repoUrlAdd)
-                        .font(.system(size: 14))
-                        .autocapitalization(.none)
-                    Button("Add Repo") {
-                        fetchRepoData(repoUrl: repoUrlAdd) { result in
-                            switch result {
-                            case .success(let repo):
-                                self.repoData.append(repo)
-                                appsLoaded = true
-                            case .failure(let error):
-                                repoError = String(describing: error)
-                                print(repoError)
-                                loadingText = "Error: " + error.localizedDescription
-                            }
-                        }
-                    }
-                }
                   
               }.onAppear(perform: {
                   //createServer(port: 2200, res: "Scylla local Server:\nScylla Version: \(scyllaVersion)\n\(UIDevice.modelName)")
                 if certImported { showNoCertAlert = false } else { showNoCertAlert = true }
                   if !appsLoaded {
-                      for repoUrl in repos {
+                      for repoUrl in scarletRepos {
                           fetchRepoData(repoUrl: repoUrl) { result in
                               switch result {
                               case .success(let repo):
@@ -132,6 +114,7 @@ struct HomeView: View {
                                   repoError = String(describing: error)
                                   print(repoError)
                                   loadingText = "Error: " + error.localizedDescription
+                                  
                               }
                           }
                       }

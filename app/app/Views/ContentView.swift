@@ -25,9 +25,9 @@ struct ContentView: View {
                 }
             OtherView()
                 .tabItem {
-                    Image(systemName: "shippingbox.fill")
+                    Image(systemName: "gear")
                         .tint(.pink)
-                    Text("Other")
+                    Text("Settings & Other")
                         .foregroundColor(.pink)
                 }
         }.accentColor(.pink) 

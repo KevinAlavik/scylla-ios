@@ -1,55 +1,55 @@
-/* 
-  Localizable.strings
-  app
+/*_
+__Localizable.strings
+__app
 
-  Created by Kevin Alavik on 2023-03-25.
-  
+__Created_by_Kevin_Alavik_on_2023-03-25.
+__
 */
 
 
-"This is a private beta!" = "Detta är en privat beta!";
-"Please do not share it" = "Snälla dela inte den!";
-"Secret key (Check the #secret-keys channel for the newest key)" = "Hemlig nyckel (Kolla i #secret-keys kanalen för den nyaste nyckeln)";
+"This_is_a_private_beta!" = "Detta_är_en_privat_beta!";
+"Please_do_not_share_it" = "Snälla_dela_inte_den!";
+"Secret_key_(Check_the_#secret-keys_channel_for_the_newest_key)" = "Hemlig_nyckel_(Kolla_i_#secret-keys_kanalen_för_den_nyaste_nyckeln)";
 "Continue" = "Fortsät";
-"(Keep in mind this is a beta, features might be broken)" = "(Kom ihåg att detta är en beta, funktioner kan vara trasiga)";
+"(Keep_in_mind_this_is_a_beta,_features_might_be_broken)" = "(Kom_ihåg_att_detta_är_en_beta,_funktioner_kan_vara_trasiga)";
 "Loading..." = "Laddar...";
 "Apps" = "Appar";
-"Apps Placeholder" = "App Platshållare";
-"Manage repos" = "Hantera repos";
-"Custom Cert" = "Anpassat Certifikat";
-"Import Certificate" = "Importera Certifikat";
-"Select Certificate" = "Välj Certifikat";
-"No Cert Imported!" = "Inget Certifikat Importerat!";
-"You havent imported any certificates!" = "Du har inte importerat några certifikat";
+"Apps_Placeholder" = "App_Platshållare";
+"Manage_repos" = "Hantera_repos";
+"Custom_Cert" = "Anpassat_Certifikat";
+"Import_Certificate" = "Importera_Certifikat";
+"Select_Certificate" = "Välj_Certifikat";
+"No_Cert_Imported!" = "Inget_Certifikat_Importerat!";
+"You_havent_imported_any_certificates!" = "Du_har_inte_importerat_några_certifikat";
 "Dissmiss" = "Avböj";
-"Credits" = "Tack vare";
-"Lead Developer" = "Lead Utvecklare";
+"Credits" = "Tack_vare";
+"Lead_Developer" = "Lead_Utvecklare";
 "Developer" = "Utvecklare";
 "Contributor" = "Bidragare";
 "Testers" = "Testare";
 "Debugging" = "Felsökning";
-"Output to port" = "Utgång till port";
-"Enable output to" = "Aktivera utgång till";
+"Output_to_port" = "Utgång_till_port";
+"Enable_output_to" = "Aktivera_utgång_till";
 "Experimental" = "Experimentell";
-"Enable support for big repos" = "Aktivera stöd för stora repos";
-"Disable only if you know what you are doing" = "Inaktivera endast om du vet vad du gör";
-"Enable support for Esign source links" = "Aktivera stöd för Esign-källlänkar";
-"Enable themes" = "Aktivera teman";
-"Use local server to install apps" = "Använd lokal server för att installera appar";
-"Use port" = "Använd port";
-"Use custom codesign api" = "Använd anpassad codesign api";
-"Custom URL/IP" = "Anpassad URL/IP";
-"Nerd Info" = "Nörd Info";
-"Running server on" = "Kör server på";
-"Failed to start server" = "Det gick inte att starta servern";
-"Select p12 and mobileprovision" = "Välj p12 och mobilprovision";
-"Password (leave blank if there is none)" = "Lösenord (lämna tomt om det inte finns något)";
-"Add certificate" = "Lägg till certifikat";
-"Custom App Name" = "Anpassat appnamn";
-"Custom Bundle ID" = "Anpassat Bundle ID";
+"Enable_support_for_big_repos" = "Aktivera_stöd_för_stora_repos";
+"Disable_only_if_you_know_what_you_are_doing" = "Inaktivera_endast_om_du_vet_vad_du_gör";
+"Enable_support_for_Esign_source_links" = "Aktivera_stöd_för_Esign-källlänkar";
+"Enable_themes" = "Aktivera_teman";
+"Use_local_server_to_install_apps" = "Använd_lokal_server_för_att_installera_appar";
+"Use_port" = "Använd_port";
+"Use_custom_codesign_api" = "Använd_anpassad_codesign_api";
+"Custom_URL/IP" = "Anpassad_URL/IP";
+"Nerd_Info" = "Nörd_Info";
+"Running_server_on" = "Kör_server_på";
+"Failed_to_start_server" = "Det_gick_inte_att_starta_servern";
+"Select_p12_and_mobileprovision" = "Välj_p12_och_mobilprovision";
+"Password_(leave_blank_if_there_is_none)" = "Lösenord_(lämna_tomt_om_det_inte_finns_något)";
+"Add_certificate" = "Lägg_till_certifikat";
+"Custom_App_Name" = "Anpassat_appnamn";
+"Custom_Bundle_ID" = "Anpassat_Bundle_ID";
 "Sign" = "Signera";
-"Select certificate" = "Välj certifikat";
-"Always use this cert" = "Använd alltid detta certifikat";
-"Imported Repo(s)" = "Importerade Repo(s)";
-"Community Repos" = "Andra Repos";
+"Select_certificate" = "Välj_certifikat";
+"Always_use_this_cert" = "Använd_alltid_detta_certifikat";
+"Imported_Repo(s)" = "Importerade_Repo(s)";
+"Community_Repos" = "Andra_Repos";
 "Placeholder" = "Platshållare";

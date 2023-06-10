@@ -25,7 +25,7 @@ struct HomeView: View {
     @State private var repoData: [Repo] = []
     @State private var repoUrlAdd: String = ""
     //MARK: IMPORTANT VARS
-    @State private var reposs = ["https://repo.alexspaces.me/", "https://puffer.is-a.dev/scylla-ios/cdn/repo.json", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json"]
+    @State private var reposs = ["https://puffer.is-a.dev/scylla-ios/cdn/repo.json", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json"]
     @State private var repos = ["https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json", "https://repo.alexspaces.me/", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json", "https://raw.githubusercontent.com/vizunchik/AltStoreRus/master/apps.json", "https://bit.ly/Quantumsource-plus", "https://bit.ly/Altstore-complete", "https://bit.ly/Quantumsource", "https://ipa.cypwn.xyz/scarlet.json", "https://altstore.oatmealdome.me", "https://bit.ly/wuxuslibraryplus", "https://flyinghead.github.io/flycast-builds/altstore.json", "https://theodyssey.dev/altstore/odysseysource.json", "https://puffer.is-a.dev/scylla-ios/cdn/repo.json"]
     @State private var installedApps = [["Scylla", "1.0", "https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jpg"]]
     //END
@@ -122,7 +122,7 @@ struct HomeView: View {
                   //createServer(port: 2200, res: "Scylla local Server:\nScylla Version: \(scyllaVersion)\n\(UIDevice.modelName)")
                 if certImported { showNoCertAlert = false } else { showNoCertAlert = true }
                   if !appsLoaded {
-                      for repoUrl in repos {
+                      for repoUrl in reposs  {
                           fetchRepoData(repoUrl: repoUrl) { result in
                               switch result {
                               case .success(let repo):

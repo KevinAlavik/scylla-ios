@@ -23,6 +23,7 @@
 		0A5C3F3E29CF45640076F679 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C3F4029CF45640076F679 /* Localizable.strings */; };
 		0A83480729CF5EE500A870FC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A83480629CF5EE500A870FC /* Kingfisher */; };
 		0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */; };
+		0AC660582A34F8C9001FB594 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC660572A34F8C9001FB594 /* TestingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		0A788EAB29BA380A003CDF42 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSystem.swift; sourceTree = "<group>"; };
+		0AC660572A34F8C9001FB594 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				04BCC7E529BCB62B006C969E /* SignView.swift */,
 				0A1DC88929C700500092E4B9 /* SelectCertView.swift */,
 				0A24AF4429CEFA8E00B9F46F /* RepoView.swift */,
+				0AC660572A34F8C9001FB594 /* TestingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */,
 				04BCC7EA29BCB62B006C969E /* SignView.swift in Sources */,
 				04BCC7F129BCB6DC006C969E /* functions.swift in Sources */,
+				0AC660582A34F8C9001FB594 /* TestingView.swift in Sources */,
 				0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */,
 				04BCC7E829BCB62B006C969E /* HomeView.swift in Sources */,
 				0A24AF4729CF0F4900B9F46F /* BlockUdid.swift in Sources */,

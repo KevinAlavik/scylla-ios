@@ -30,6 +30,14 @@ struct ContentView: View {
                     Text("Other")
                         .foregroundColor(.pink)
                 }
+            TestingView()
+                .tabItem {
+                    Image(systemName: "gear")
+                        .tint(.pink)
+                    Text("Testing")
+                        .foregroundColor(.pink)
+                }
+            
         }.accentColor(.pink) 
     }
 }

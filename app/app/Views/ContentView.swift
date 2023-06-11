@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
             TestingView()
                 .tabItem {
-                    Image(systemName: "gear")
+                    Image(systemName: "ladybug")
                         .tint(.pink)
                     Text("Testing")
                         .foregroundColor(.pink)

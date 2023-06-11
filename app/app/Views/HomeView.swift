@@ -23,6 +23,7 @@ struct HomeView: View {
     @State private var showNoCertAlert = false
     @State private var showAddRepo = false
     @State private var repoData: [Repo] = []
+    @State private var appData: [AppInfo] = []
     @State private var repoUrlAdd: String = ""
     //MARK: IMPORTANT VARS
     @State private var reposs = ["https://puffer.is-a.dev/scylla-ios/cdn/repo.json", "https://usescarlet.com/scarlet.json", "https://cdn.altstore.io/file/altstore/apps.json"]
@@ -74,6 +75,33 @@ struct HomeView: View {
                       }.padding(.bottom, 7)
                   }
               }
+              /*Section("All Apps") {
+                  VStack {
+                      if let appData = appData {
+                          ForEach(appData) { app in
+                              HStack {
+                                  VStack {
+                                      KFImage(URL(string: app.icon ?? "https://pbs.twimg.com/profile_images/1177457687014985729/3rleupvs_400x400.png"))
+                                          .resizable()
+                                          .frame(width: 50, height: 50)
+                                          .cornerRadius(10).padding(.top, 7)
+                                  }
+                                  VStack {
+                                      Text(app.name ?? "No Name")
+                                          .frame(maxWidth: .infinity, alignment: .leading)
+                                      Text(app.description ?? "No Repo Description")
+                                          .frame(maxWidth: .infinity, alignment: .leading)
+                                          .font(.system(size: 10))
+                                          .foregroundColor(.gray)
+                                  }.padding(.top, 7)
+                              }.padding(.bottom, 7)
+                          }
+                      } else {
+                          Text(loadingText)
+                      }
+                  }
+              }*/
+
             Section("Repos") {
                   VStack {
                       if let repoData = repoData {
@@ -104,11 +132,7 @@ struct HomeView: View {
                   //createServer(port: 2200, res: "Scylla local Server:\nScylla Version: \(scyllaVersion)\n\(UIDevice.modelName)")
                 if certImported { showNoCertAlert = false } else { showNoCertAlert = true }
                   if !appsLoaded {
-<<<<<<< HEAD
                       for repoUrl in reposs  {
-=======
-                      for repoUrl in scarletRepos {
->>>>>>> a4b0b5a95a20d0a875f37e38ef757e87d06586ad
                           fetchRepoData(repoUrl: repoUrl) { result in
                               switch result {
                               case .success(let repo):
@@ -120,6 +144,30 @@ struct HomeView: View {
                                   loadingText = "Error: " + error.localizedDescription
                                   
                               }
+                              switch result {
+                              case .success(let repo):
+                                  var dataDictionary: [String: [String]] = [:]
+                                  
+                                  if let utilities = repo.Utilities {
+                                      dataDictionary["Utilities"] = utilities.map { $0.name ?? "" }
+                                  }
+                                  
+                                  if let games = repo.Games {
+                                      dataDictionary["Games"] = games.map { $0.name ?? "" }
+                                  }
+                                  
+                                  if let tweaks = repo.Tweaks {
+                                      dataDictionary["Tweaks"] = tweaks.map { $0.name ?? "" }
+                                  }
+                                  
+                                  let categories = getAllCategories(dataDictionary, excludedCategory: "Info")
+                                  self.appData.append(repo)
+                                  appsLoaded = true
+                                  print(appData)
+                              case .failure(let error):
+                                  print(error)
+                              }
+
                           }
                       }
                   }
@@ -191,5 +239,4 @@ struct HomeView: View {
         
         present(ac, animated: true)
     }*/
-
 }

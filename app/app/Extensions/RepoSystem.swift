@@ -33,7 +33,8 @@ struct Repo: Decodable, Identifiable {
 }
 
 
-struct AppInfo: Decodable {
+struct AppInfo: Decodable, Identifiable {
+    let id: UUID = UUID()
     let name: String?
     let developer: String?
     let version: String?
@@ -114,4 +115,48 @@ func fetchRepoData(repoUrl: String, completion: @escaping (Result<Repo, Error>) 
     }
 
     task.resume()
+}
+
+func getAllCategories(_ data: [String: [String]], excludedCategory: String) -> [String] {
+    var result: [String] = []
+    
+    for (key, value) in data {
+        if key != excludedCategory {
+            result.append(contentsOf: value)
+        }
+    }
+    
+    return result
+}
+
+func testCat() {
+    let repoUrl = "https://puffer.is-a.dev/scylla-ios/cdn/repo.json"
+    var repoData: [Repo] = []
+    
+    fetchRepoData(repoUrl: repoUrl) { result in
+        switch result {
+        case .success(let repo):
+            repoData.append(repo)
+            
+            var dataDictionary: [String: [String]] = [:]
+            
+            if let utilities = repo.Utilities {
+                dataDictionary["Utilities"] = utilities.map { $0.name ?? "" }
+            }
+            
+            if let games = repo.Games {
+                dataDictionary["Games"] = games.map { $0.name ?? "" }
+            }
+            
+            if let tweaks = repo.Tweaks {
+                dataDictionary["Tweaks"] = tweaks.map { $0.name ?? "" }
+            }
+            
+            
+            let categories = getAllCategories(dataDictionary, excludedCategory: "Info")
+            print(categories)
+        case .failure(let error):
+            print(error)
+        }
+    }
 }
